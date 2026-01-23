@@ -1,0 +1,39 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH (VPS)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          # SSH_HOST: IP o dominio del VPS (ej: TU_VPS_IP o tu-dominio.com)
+          host: ${{ secrets.SSH_HOST }}
+          # SSH_USER: usuario con permisos para hacer git pull y ejecutar docker (ej: root o deploy)
+          username: ${{ secrets.SSH_USER }}
+          # SSH_KEY: contenido de la clave privada (sin passphrase) autorizada en ~/.ssh/authorized_keys del VPS
+          key: ${{ secrets.SSH_KEY }}
+          # SSH_PORT: puerto SSH del VPS (por defecto 22 si no se define el secret)
+          port: ${{ secrets.SSH_PORT || '22' }}
+          script: |
+            set -e
+            # Ruta del proyecto en el VPS.
+            # Ajustá esta ruta si clonaste el repo en otro lugar.
+            cd ~/Portfolio
+
+            # Traer la última versión de main y descartar cambios locales
+            git fetch origin main
+            git reset --hard origin/main
+
+            # Ir al directorio de despliegue
+            cd deploy
+
+            # Ejecutar el script de deploy:
+            # - Copia public/ a deploy/site/
+            # - Regenera la config de nginx (HTTP o HTTPS según exista cert)
+            # - Levanta/recrea el stack de deploy/compose.yml
+            ./scripts/02-deploy.sh

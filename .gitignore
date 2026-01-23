@@ -1,0 +1,13 @@
+## Entornos locales
+deploy/.env
+
+## Datos generados de deploy (no versionar certificados ni sitio generado)
+deploy/data/
+deploy/site/
+
+## Artefactos de build de Dart/Jaspr
+.dart_tool/
+build/
+public/.dart_tool/
+public/build/
+

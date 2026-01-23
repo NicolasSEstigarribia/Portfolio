@@ -1,0 +1,60 @@
+services:
+  # -----------------------------------------------------------
+  # nginx
+  #
+  # Proxy reverso frontal que expone HTTP (80) y HTTPS (443)
+  # hacia internet y reenvía el tráfico al contenedor `app`.
+  # La configuración real se genera desde los templates en
+  # deploy/nginx/conf.d mediante scripts/02–03.sh.
+  # -----------------------------------------------------------
+  nginx:
+    image: nginx:alpine
+    container_name: web_nginx
+    # Publicamos HTTP (80) y HTTPS (443) del contenedor hacia el VPS
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # Config de nginx generada desde los templates de deploy/nginx/conf.d
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      # Webroot usado por certbot para el challenge HTTP-01
+      - ./data/www:/var/www/certbot:ro
+      # Carpeta donde certbot guarda los certificados emitidos
+      - ./data/letsencrypt:/etc/letsencrypt:ro
+    depends_on:
+      - app
+    restart: unless-stopped
+
+  # -----------------------------------------------------------
+  # app
+  #
+  # Contenedor Nginx que sirve el sitio estático ya compilado.
+  # El contenido se copia a deploy/site/ desde ../public
+  # cada vez que corrés scripts/02-deploy.sh.
+  # -----------------------------------------------------------
+  app:
+    image: nginx:alpine
+    container_name: web_app
+    volumes:
+      - ./site:/usr/share/nginx/html:ro
+    expose:
+      - "80"
+    restart: unless-stopped
+
+  # -----------------------------------------------------------
+  # certbot
+  #
+  # Contenedor "idle" de certbot que mantiene montados los
+  # volúmenes de certificados y webroot. Los comandos reales
+  # de emisión/renovación se ejecutan desde scripts/03–04.sh.
+  # -----------------------------------------------------------
+  certbot:
+    image: certbot/certbot:latest
+    container_name: web_certbot
+    volumes:
+      - ./data/www:/var/www/certbot
+      - ./data/letsencrypt:/etc/letsencrypt
+    # Proceso dummy que se queda corriendo; las llamadas reales a certbot
+    # se hacen desde scripts/03-ssl.sh y 04-renew-cron.sh
+    entrypoint: ["sh", "-c", "trap exit TERM; while :; do sleep 12h & wait $${!}; done"]
+    restart: unless-stopped
