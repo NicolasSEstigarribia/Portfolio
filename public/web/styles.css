@@ -705,18 +705,19 @@ ul {
   .site-nav {
     display: flex;
     flex-direction: row;
-    gap: 0.3rem;
-    flex-wrap: wrap;
+    gap: 0.25rem;
+    flex-wrap: nowrap;
     justify-content: center;
     width: 100%;
   }
 
   .site-nav a {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.7rem;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.5rem;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: var(--radius-full);
+    white-space: nowrap;
   }
 
   .site-nav a:hover,

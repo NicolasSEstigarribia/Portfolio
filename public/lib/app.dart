@@ -26,7 +26,7 @@ class SiteHeader extends StatelessComponent {
             a(
               [
                 span(
-                  [Component.text('Dev Flutter | Dart | PostgreSQL')],
+                  [Component.text('Flutter | Dart | Full-Stack')],
                   classes: 'brand-role',
                 ),
               ],
@@ -84,23 +84,23 @@ class HeroSection extends StatelessComponent {
             div(
               [
                 p(
-                  [Component.text('Desarrollador Flutter')],
+                  [Component.text('SSR+ Full-Stack Flutter Developer')],
                   classes: 'hero-kicker',
                 ),
                 h1(
                   [Component.text('Nicolas Estigarribia')],
                   id: 'hero-title',
-                  classes: 'hero-title gradient-text', // Added gradient-text
+                  classes: 'hero-title gradient-text',
                 ),
                 p(
-                  [Component.text('Ingeniería móvil de alto impacto · Argentina')],
+                  [Component.text('Arquitectura de Software · Mobile & Web · DevOps · Argentina')],
                   classes: 'hero-subtitle',
                 ),
                 p(
                   [
                     Component.text(
-                      'Transformo ideas complejas en experiencias móviles fluidas y escalables con Flutter. '
-                      'Especializado en arquitectura limpia, rendimiento y diseño de interfaces premium.',
+                      'Construyo soluciones full-stack escalables con Flutter (Web/Mobile) y backends robustos. '
+                      'De la arquitectura limpia al despliegue en producción: Serverpod, Supabase, Dart Frog, y gestión completa de VPS.',
                     ),
                   ],
                   classes: 'hero-text',
@@ -228,8 +228,8 @@ class AboutSection extends StatelessComponent {
                 p(
                   [
                     Component.text(
-                      'Creo experiencias móviles centradas en las personas, combinando un alto rendimiento con una arquitectura sólida '
-                      'y un enfoque constante en la calidad del código.',
+                      'Desarrollo soluciones end-to-end desde el frontend hasta la infraestructura, '
+                      'aplicando Clean Architecture y principios SOLID en cada capa del stack tecnológico.',
                     ),
                   ],
                   classes: 'section-intro',
@@ -244,27 +244,28 @@ class AboutSection extends StatelessComponent {
                     p(
                       [
                         Component.text(
-                          'Cuento con experiencia en el consumo de APIs RESTful, almacenamiento seguro de datos y autenticación mediante '
-                          'JWT y Refresh Tokens. He desarrollado widgets personalizados y plugins a medida, trabajando con arquitecturas '
-                          'de gestión de estado como BLoC, Provider y Riverpod.',
+                          'En el frontend desarrollo con Flutter para Web y Mobile, utilizando BLoC, Riverpod y Provider para gestión de estado. '
+                          'En el backend implemento APIs robustas con Serverpod (ORM integrado), Supabase, y Dart Frog, manejando autenticación JWT, '
+                          'WebSockets en tiempo real, y bases de datos PostgreSQL.',
                         ),
                       ],
                     ),
                   ],
-                  classes: 'card', // Added card class for background
+                  classes: 'card',
                 ),
                 div(
                   [
                     p(
                       [
                         Component.text(
-                          'Aplico principios de Clean Code y patrones de diseño como Clean Architecture, Model-View (MV) y Model-View-ViewModel (MVVM), '
-                          'apoyándome en pruebas unitarias, de widgets y de integración para garantizar estabilidad y mantenibilidad.',
+                          'Aplico Clean Architecture, SOLID y patrones de diseño para crear código mantenible y escalable. '
+                          'En DevOps, administro VPS (Linux), configuro Nginx como proxy inverso, implemento CI/CD con GitHub Actions, '
+                          'manejo contenedores Docker, y aseguro aplicaciones con SSL/TLS. Deployment automatizado de principio a fin.',
                         ),
                       ],
                     ),
                   ],
-                  classes: 'card', // Added card class for background
+                  classes: 'card',
                 ),
               ],
               classes: 'section-content two-column',
@@ -341,12 +342,12 @@ class ExperienceSection extends StatelessComponent {
                       [
                         li([
                           Component.text(
-                            'Desarrollo full-stack de interfaces en Flutter y lógica de backend utilizando Supabase y PostgreSQL.',
+                            'Desarrollo full-stack: interfaces Flutter (Web/Mobile) y backend con Supabase/PostgreSQL. Implementación de APIs REST, autenticación JWT, y lógica de negocio compleja.',
                           ),
                         ]),
                         li([
                           Component.text(
-                            'Resolución de desafíos técnicos y aseguramiento de la calidad del código, colaborando con desarrolladores junior.',
+                            'Resolución de desafíos técnicos complejos, code reviews, y mentoría de desarrolladores junior. Aplicación de Clean Architecture y SOLID en todos los proyectos.',
                           ),
                         ]),
                       ],
@@ -387,12 +388,12 @@ class ExperienceSection extends StatelessComponent {
                       [
                         li([
                           Component.text(
-                            'Desarrollo de widgets y pantallas fundamentales para la aplicación Banco de Barone.',
+                            'Desarrollo de componentes críticos para app bancaria: autenticación biométrica, transferencias, consulta de saldos, y gestión de tarjetas.',
                           ),
                         ]),
                         li([
                           Component.text(
-                            'Implementación de nuevas funcionalidades y mantenimiento de código legacy.',
+                            'Implementación de arquitectura escalable con BLoC, integración de APIs RESTful seguras, y optimización de rendimiento para UX fluida.',
                           ),
                         ]),
                       ],
@@ -433,12 +434,12 @@ class ExperienceSection extends StatelessComponent {
                       [
                         li([
                           Component.text(
-                            'Desarrollo de proyectos de transporte y logística, geolocalización y mapas.',
+                            'Desarrollo de apps de transporte y logística con geolocalización GPS, mapas interactivos, y tracking en tiempo real.',
                           ),
                         ]),
                         li([
                           Component.text(
-                            'Integración de pasares de pagos como Stripe y Mercado Pago.',
+                            'Integración de pasarelas de pago (Stripe, Mercado Pago), consumo de APIs RESTful, y manejo de estados complejos con Provider.',
                           ),
                         ]),
                       ],
@@ -493,13 +494,14 @@ class ProjectsSection extends StatelessComponent {
                 article(
                   [
                     h3(
-                      [Component.text('Banco Bineo')],
+                      [Component.text('Banco Bineo - App Bancaria')],
                       classes: 'card-title',
                     ),
                     p(
                       [
                         Component.text(
-                          'Desarrollo de componentes críticos para la aplicación bancaria, asegurando seguridad y fluidez en transacciones.',
+                          'Desarrollo de componentes críticos para aplicación bancaria móvil. Implementación de flujos de autenticación segura, '
+                          'gestión de cuentas, transferencias, y animaciones fluidas. Clean Architecture con BLoC para máxima escalabilidad.',
                         ),
                       ],
                       classes: 'card-text',
@@ -507,7 +509,7 @@ class ProjectsSection extends StatelessComponent {
                     p(
                       [
                         strong([Component.text('Stack:')]),
-                        Component.text(' Flutter, BLoC, Clean Arch.'),
+                        Component.text(' Flutter, BLoC, Clean Architecture, JWT, REST APIs'),
                       ],
                       classes: 'card-meta',
                     ),
@@ -517,13 +519,14 @@ class ProjectsSection extends StatelessComponent {
                 article(
                   [
                     h3(
-                      [Component.text('Logística & Mapas')],
+                      [Component.text('Full-Stack Infrastructure Portfolio')],
                       classes: 'card-title',
                     ),
                     p(
                       [
                         Component.text(
-                          'App de gestión de envíos con geolocalización en tiempo real y optimización de rutas.',
+                          'Portfolio web con SSR usando Jaspr (Dart), desplegado en VPS con Nginx, Docker, SSL automático con Let\'s Encrypt, '
+                          'y CI/CD con GitHub Actions. Configuración completa de infraestructura desde cero, incluyendo firewall y monitoreo.',
                         ),
                       ],
                       classes: 'card-text',
@@ -532,7 +535,7 @@ class ProjectsSection extends StatelessComponent {
                       [
                         strong([Component.text('Stack:')]),
                         Component.text(
-                          ' Flutter, Google Maps, APIs REST.',
+                          ' Jaspr SSR, Docker, Nginx, Linux VPS, GitHub Actions, SSL/TLS',
                         ),
                       ],
                       classes: 'card-meta',
@@ -543,13 +546,14 @@ class ProjectsSection extends StatelessComponent {
                 article(
                   [
                     h3(
-                      [Component.text('E-commerce Móvil')],
+                      [Component.text('Sistema de Monitoreo en Tiempo Real')],
                       classes: 'card-title',
                     ),
                     p(
                       [
                         Component.text(
-                          'Plataforma de compras con experiencia de usuario premium y animaciones fluidas.',
+                          'Aplicación full-stack con Flutter Web/Mobile + backend Serverpod. WebSockets para actualizaciones en tiempo real, '
+                          'PostgreSQL con ORM, autenticación JWT, panel de administración, y deployment en VPS con Docker Compose.',
                         ),
                       ],
                       classes: 'card-text',
@@ -558,7 +562,7 @@ class ProjectsSection extends StatelessComponent {
                       [
                         strong([Component.text('Stack:')]),
                         Component.text(
-                          ' Flutter, Riverpod, Stripe.',
+                          ' Flutter, Serverpod, PostgreSQL, WebSockets, Docker, VPS',
                         ),
                       ],
                       classes: 'card-meta',
@@ -612,29 +616,16 @@ class SkillsSection extends StatelessComponent {
                 div(
                   [
                     h3(
-                      [Component.text('Mobile Development')],
+                      [Component.text('Flutter Development')],
                       classes: 'skills-title',
                     ),
                     div(
                       [
-                        span([Component.text('Flutter')], classes: 'chip'),
+                        span([Component.text('Flutter Web')], classes: 'chip'),
+                        span([Component.text('Flutter Mobile')], classes: 'chip'),
                         span([Component.text('Dart')], classes: 'chip'),
                         span([Component.text('Android / iOS')], classes: 'chip'),
                         span([Component.text('Method Channels')], classes: 'chip'),
-                      ],
-                      classes: 'chip-list',
-                    ),
-                  ],
-                  classes: 'skills-group',
-                ),
-                div(
-                  [
-                    h3(
-                      [Component.text('State Management')],
-                      classes: 'skills-title',
-                    ),
-                    div(
-                      [
                         span([Component.text('BLoC')], classes: 'chip'),
                         span([Component.text('Riverpod')], classes: 'chip'),
                         span([Component.text('Provider')], classes: 'chip'),
@@ -647,15 +638,18 @@ class SkillsSection extends StatelessComponent {
                 div(
                   [
                     h3(
-                      [Component.text('Backend & Data')],
+                      [Component.text('Backend & APIs')],
                       classes: 'skills-title',
                     ),
                     div(
                       [
-                        span([Component.text('PostgreSQL')], classes: 'chip'),
+                        span([Component.text('Serverpod + ORM')], classes: 'chip'),
                         span([Component.text('Supabase')], classes: 'chip'),
-                        span([Component.text('Node.js')], classes: 'chip'),
-                        span([Component.text('APIs REST')], classes: 'chip'),
+                        span([Component.text('Dart Frog')], classes: 'chip'),
+                        span([Component.text('PostgreSQL')], classes: 'chip'),
+                        span([Component.text('REST APIs')], classes: 'chip'),
+                        span([Component.text('WebSockets')], classes: 'chip'),
+                        span([Component.text('JWT Auth')], classes: 'chip'),
                       ],
                       classes: 'chip-list',
                     ),
@@ -683,17 +677,19 @@ class SkillsSection extends StatelessComponent {
                 div(
                   [
                     h3(
-                      [Component.text('Infrastructure & DevOps')],
+                      [Component.text('DevOps & Infrastructure')],
                       classes: 'skills-title',
                     ),
                     div(
                       [
+                        span([Component.text('Linux VPS Management')], classes: 'chip'),
+                        span([Component.text('Nginx + Reverse Proxy')], classes: 'chip'),
                         span([Component.text('Docker & Compose')], classes: 'chip'),
-                        span([Component.text('Nginx Web Server')], classes: 'chip'),
-                        span([Component.text('Linux / VPS Admin')], classes: 'chip'),
-                        span([Component.text('CI/CD Pipelines')], classes: 'chip'),
+                        span([Component.text('SSL/TLS Certificates')], classes: 'chip'),
+                        span([Component.text('CI/CD (GitHub Actions)')], classes: 'chip'),
                         span([Component.text('Bash Scripting')], classes: 'chip'),
-                        span([Component.text('SSL / Let\'s Encrypt')], classes: 'chip'),
+                        span([Component.text('Server Security')], classes: 'chip'),
+                        span([Component.text('Ubuntu/Debian')], classes: 'chip'),
                       ],
                       classes: 'chip-list',
                     ),
